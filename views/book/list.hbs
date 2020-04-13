@@ -1,0 +1,32 @@
+<h3><a href="/book" class="btn btn-secondary"><i class="fa fa-plus"></i> Dodaj novu knjigu</a> Popis knjiga</h3>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Naziv</th>
+            <th>Autor</th>
+            <th>Godina objave</th>
+            <th>Datum objave</th>
+            <th>Cijena</th>
+            <th>Broj stranica</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+            <tr>
+                <td>{{this.naziv}}</td>
+                <td>{{this.autor}}</td>
+                <td>{{this.godina_objave}}</td>
+                <td>{{this.datum_objave}}</td>
+                <td>{{this.cijena}}</td>
+                <td>{{this.broj_stranica}}</td>
+                <td>
+                    <a href="/book/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                </td>
+                <td>
+                    <a href="/book/delete/{{this._id}}" onclick="return confirm('Jeste li sigurni da želite izbrisati ovu knjigu?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        {{/each}}
+    </tbody>
+</table>
